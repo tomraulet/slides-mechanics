@@ -20,6 +20,6 @@ find slideshow/* -name 'slides.md' | sed 's|\(.*\)/.*|\1|' | sort | uniq | xargs
 find slideshow/* -name 'slides.md' -exec sh -c 'pandoc {} -t revealjs -s -o $(dirname {}| sed 's/slideshow/html/')/index.html -V revealjs-url=./reveal.js $(cat $(dirname {})/revealjs_option.txt ) ' \;
 
 # add custom css link in generated html
-find html/* -name 'index.html' -exec sed -i 's!</head>!<link rel="stylesheet" href="./custom_css/innolea.css"></head>!' {} \;
+# find html/* -name 'index.html' -exec sed -i 's!</head>!<link rel="stylesheet" href="./custom_css/innolea.css"></head>!' {} \;
 # add div for personnalized slides
-find html/* -name 'index.html' -exec sed -i 's!</body>!<div id="header-left"></div><div id="footer-up-left">CONFIDENTIEL</div><div id="footer-left"></div><div id="footer-line" ><hr /></div></body>!' {} \;
+# find html/* -name 'index.html' -exec sed -i 's!</body>!<div id="header-left"></div><div id="footer-up-left">CONFIDENTIEL</div><div id="footer-left"></div><div id="footer-line" ><hr /></div></body>!' {} \;
